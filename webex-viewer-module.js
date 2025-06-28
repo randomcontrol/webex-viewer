@@ -9,9 +9,21 @@ window.Module = {
     }],
     postRun: [],
     locateFile: function (path, prefix) {
-        const basedir = window.g_webex_basedir || './js/components/';
-        if (path.endsWith('.wasm')) { return basedir + path; }
-        if (path.endsWith('.data')) { return basedir + path; }
+
+        if (path.endsWith('.wasm')) { return 'https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest/webex-viewer.wasm'; }
+        if (path.endsWith('.data')) { return 'https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest/webex-viewer.data'; }
+
+        const scripts = document.getElementsByTagName('script');
+        let moduleScriptUrl = '';
+        for (let i = 0; i < scripts.length; i++) {
+            if (scripts[i].src && scripts[i].src.includes('webex-viewer-module.js')) {
+                moduleScriptUrl = scripts[i].src;
+                break;
+            }
+        }
+        const basePath = moduleScriptUrl.substring(0, moduleScriptUrl.lastIndexOf('/') + 1);
+        if (path.endsWith('.wasm')) return basePath + 'webex-viewer.wasm';
+        if (path.endsWith('.data')) return basePath + 'webex-viewer.data';
         return prefix + path;
     },
     onRuntimeInitialized: function () {
@@ -53,8 +65,9 @@ window.webex_parse_query_string_url = function (params) {
     }
     return theurl;
 };
-
+/*
 window.webex_parse_query_Module_json = function (qstr) {
+    // qstr: window.location.search.
     const params = webex_parse_query_string(qstr);
     const theurl = webex_parse_query_string_url(params);
     return {
@@ -62,3 +75,4 @@ window.webex_parse_query_Module_json = function (qstr) {
         'open_scene': theurl,
     };
 };
+*/
