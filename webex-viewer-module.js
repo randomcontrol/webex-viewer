@@ -9,10 +9,6 @@ window.Module = {
     }],
     postRun: [],
     locateFile: function (path, prefix) {
-
-        if (path.endsWith('.wasm')) { return 'https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest/webex-viewer.wasm'; }
-        if (path.endsWith('.data')) { return 'https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest/webex-viewer.data'; }
-
         const scripts = document.getElementsByTagName('script');
         let moduleScriptUrl = '';
         for (let i = 0; i < scripts.length; i++) {
