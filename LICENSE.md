@@ -1,6 +1,6 @@
 ## License
 
-The Viewer (webex-viewer.js, webex-viewer.wasm, webex-viewer.data) is proprietary software © RandomControl, All Rights Reserved.
+The Viewer (webex-viewer.js/.wasm/.data) is proprietary software © RandomControl, All Rights Reserved.
 
 It is provided free of charge for embedding and use on public or private websites, applications, or presentations as a runtime viewer.
 

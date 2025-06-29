@@ -1,7 +1,7 @@
 # Web Maverick Excelsior Viewer
 
 This repository contains a prebuilt WebAssembly application compiled with Emscripten.
-The `.js`, `.wasm`, and optional `.data` files are intended to be served directly via the jsDelivr CDN.
+The `.js`, `.wasm`, and `.data` files are intended to be served directly via the jsDelivr CDN.
 
 ## Files
 
@@ -14,7 +14,7 @@ The `.js`, `.wasm`, and optional `.data` files are intended to be served directl
 
 You can access these files through jsDelivr:
 
-https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest/webex-viewer.js
-https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest/webex-viewer.wasm
-https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest/webex-viewer.data
-https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest/webex-viewer-module.js
+https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.0.1/webex-viewer.js
+https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.0.1/webex-viewer.wasm
+https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.0.1/webex-viewer.data
+https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.0.1/webex-viewer-module.js
