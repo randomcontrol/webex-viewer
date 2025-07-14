@@ -23,11 +23,7 @@ For a specific version:
 
 ```javascript
 webex_viewer.init({
-    cdn_base: 'https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest',
-    scripts: {
-        module: 'webex-viewer-module.js',
-        viewer: 'webex-viewer.js'
-    }
+    cdn_base: 'https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@latest'
 });
 ```
 
