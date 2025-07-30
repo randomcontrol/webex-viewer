@@ -32,7 +32,7 @@ window.Module = {
 //   - "close_scene":     d0=""         / d1=""            / d2="".
 //   - "set_clear_color": d0=hex_color  / d1=""            / d2="".
 //   - "apply_mtl":       d0=layer_name / d1=material_name / d2="".
-window.webex_in = function (op, d0 = "", d1 = "", d2 = "") {
+window.wasm_i = function (op, d0 = "", d1 = "", d2 = "") {
     if (Module.ccall) {
         Module.ccall('wasm_i', null, ['string', 'string', 'string', 'string'], [op, d0, d1, d2]);
     } else {
