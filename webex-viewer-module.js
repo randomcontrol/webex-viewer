@@ -22,9 +22,7 @@ window.Module = {
         if (path.endsWith('.data')) return basePath + 'webex-viewer.data';
         return prefix + path;
     },
-    onRuntimeInitialized: function () {
-        console.log('WebAssembly runtime initialized');
-    }
+    onRuntimeInitialized: function () {}
 };
 
 // - Define wasm_i() to send commands to the WASM module.
