@@ -27,6 +27,13 @@ window.Module = {
     }
 };
 
+// - Define wasm_i() to send commands to the WASM module.
+// - Supported "op" values:
+//
+//   - "open_scene":      d0=webex_url  / d1=""            / d2="".
+//   - "close_scene":     d0=""         / d1=""            / d2="".
+//   - "set_clear_color": d0=hex_color  / d1=""            / d2="".
+//   - "apply_mtl":       d0=layer_name / d1=material_name / d2="".
 window.webex_in = function (op, d0 = "", d1 = "", d2 = "") {
     if (Module.ccall) {
         Module.ccall('wasm_i', null, ['string', 'string', 'string', 'string'], [op, d0, d1, d2]);
@@ -34,6 +41,18 @@ window.webex_in = function (op, d0 = "", d1 = "", d2 = "") {
         console.error('Module.ccall not available yet');
     }
 };
+
+/*
+// - Define wasm_o() to receive callbacks from the WASM module.
+// - Supported "op" values:
+//
+//   - "open_scene_starting": d0=filename / d1="" / d2="".
+//   - "open_scene_progress": d0=0..100   / d1="" / d2="".
+//   - "open_scene_complete": d0=""       / d1="" / d2="".
+window.wasm_o = function (op, d0, d1, d2) {
+    console.log('[wasm_o]', op, d0, d1, d2);
+};
+*/
 
 window.webex_parse_query_string = function (qstr) {
     const params_obj = {};
@@ -61,6 +80,7 @@ window.webex_parse_query_string_url = function (params) {
     }
     return theurl;
 };
+
 /*
 window.webex_parse_query_Module_json = function (qstr) {
     // qstr: window.location.search.

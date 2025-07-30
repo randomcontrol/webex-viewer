@@ -4,7 +4,7 @@ A high-performance WebAssembly-based 3D viewer for interactive real-time visuali
 
 ## Overview
 
-This repository contains a pre-packaged WebAssembly viewer component for rendering interactive 3D models with real-time material customization, advanced lighting, and photorealistic quality. The viewer supports WebGL 2.0 and provides professional-grade visualization capabilities.
+This repository contains a pre-packaged WebAssembly viewer component for rendering interactive 3D models with real-time material customization, advanced lighting, and photorealistic quality. The viewer leverages WebGL 2.0 and provides professional-grade visualization capabilities.
 
 ## Installation
 
@@ -16,7 +16,7 @@ This repository contains a pre-packaged WebAssembly viewer component for renderi
 
 For a specific version:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.0.1/webex-viewer-module.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.1.1/webex-viewer-module.js"></script>
 ```
 
 ## Basic Usage
