@@ -9,9 +9,17 @@ window.Module = {
     }],
     postRun: [],
     locateFile: function (path, prefix) {
-        const basedir = window.g_webex_basedir || './js/viewer/';
-        if (path.endsWith('.wasm')) { return basedir + path; }
-        if (path.endsWith('.data')) { return basedir + path; }
+        const scripts = document.getElementsByTagName('script');
+        let moduleScriptUrl = '';
+        for (let i = 0; i < scripts.length; i++) {
+            if (scripts[i].src && scripts[i].src.includes('webex-viewer-module.js')) {
+                moduleScriptUrl = scripts[i].src;
+                break;
+            }
+        }
+        const basePath = moduleScriptUrl.substring(0, moduleScriptUrl.lastIndexOf('/') + 1);
+        if (path.endsWith('.wasm')) return basePath + 'webex-viewer.wasm';
+        if (path.endsWith('.data')) return basePath + 'webex-viewer.data';
         return prefix + path;
     },
     onRuntimeInitialized: function () { }
@@ -32,15 +40,17 @@ window.wasm_i = function (op, d0 = "", d1 = "", d2 = "") {
     }
 };
 
+/*
 // - Define wasm_o() to receive callbacks from the WASM module.
 // - Supported "op" values:
 //
 //   - "open_scene_starting": d0=filename / d1="" / d2="".
 //   - "open_scene_progress": d0=0..100   / d1="" / d2="".
 //   - "open_scene_complete": d0=""       / d1="" / d2="".
-window.wasm_o = function(op, d0, d1, d2) {
+window.wasm_o = function (op, d0, d1, d2) {
     console.log('[wasm_o]', op, d0, d1, d2);
 };
+*/
 
 window.webex_parse_query_string = function (qstr) {
     const params_obj = {};
@@ -69,7 +79,9 @@ window.webex_parse_query_string_url = function (params) {
     return theurl;
 };
 
+/*
 window.webex_parse_query_Module_json = function (qstr) {
+    // qstr: window.location.search.
     const params = webex_parse_query_string(qstr);
     const theurl = webex_parse_query_string_url(params);
     return {
@@ -77,3 +89,4 @@ window.webex_parse_query_Module_json = function (qstr) {
         'open_scene': theurl,
     };
 };
+*/
