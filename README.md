@@ -1,6 +1,6 @@
 # Maverick Excelsior Viewer
 
-A high-performance WebAssembly-based 3D viewer for interactive real-time visualization of jewelry and products created with Maverick Excelsior.
+A high-performance WebAssembly-based 3D viewer for interactive real-time visualization of fine jewelry.
 
 ## Overview
 
@@ -16,7 +16,7 @@ This repository contains a pre-packaged WebAssembly viewer component for renderi
 
 For a specific version:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.1.1/webex-viewer-module.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.2.0/webex-viewer-module.js"></script>
 ```
 
 ## Basic Usage
@@ -49,4 +49,4 @@ webex_viewer.init({
 
 ## License
 
-Read `LICENSE.md` for details.
+Read `LICENSE` for details.
