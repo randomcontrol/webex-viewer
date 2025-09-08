@@ -78,15 +78,3 @@ window.webex_parse_query_string_url = function (params) {
     }
     return theurl;
 };
-
-/*
-window.webex_parse_query_Module_json = function (qstr) {
-    // qstr: window.location.search.
-    const params = webex_parse_query_string(qstr);
-    const theurl = webex_parse_query_string_url(params);
-    return {
-        'set_clear_color': 'white',
-        'open_scene': theurl,
-    };
-};
-*/
