@@ -41,16 +41,8 @@ window.Module = {
     onRuntimeInitialized: function () { }
 };
 
-// Send commands to the WASM module:
-//
-//   - "open_scene":      d0=webex_url  / d1=""            / d2="".
-//   - "close_scene":     d0=""         / d1=""            / d2="".
-//   - "set_clear_color": d0=hex_color  / d1=""            / d2="".
-//   - "apply_mtl":       d0=layer_name / d1=material_name / d2="".
-//   - "set_autospin":    d0="0"|"1"    / d1=""            / d2="".
-//   - "set_quality":     d0=quality    / d1=""            / d2="".
-//   - "zoom":            d0="+1"|"-1"  / d1=""            / d2="".
-//   - "resize":          d0=""         / d1=""            / d2="".
+// Send commands to the WASM module.
+// Refer to the Viewer API documentation for the full list of supported commands.
 window.wasm_i = function (op, d0 = "", d1 = "", d2 = "") {
     if (Module.ccall) {
         Module.ccall('wasm_i', null, ['string', 'string', 'string', 'string'], [op, d0, d1, d2]);
@@ -59,15 +51,12 @@ window.wasm_i = function (op, d0 = "", d1 = "", d2 = "") {
     }
 };
 
-// Receive callbacks from the WASM module (dispatched as CustomEvent by C++):
-//
-//   - "open_scene_starting": d0=filename / d1="" / d2="".
-//   - "open_scene_progress": d0=0..100   / d1="" / d2="".
-//   - "open_scene_complete": d0=""       / d1="" / d2="".
+// Receive callbacks from the WASM module (dispatched as CustomEvent).
+// Refer to the Viewer API documentation for the full list of callback events.
 window.addEventListener('wasm_o', function (e) {
     var detail = e.detail;
     var op = detail.op, d0 = detail.d0, d1 = detail.d1, d2 = detail.d2;
-    // Forward to window.wasm_o function if defined (for nodejs-webex-viewer compatibility).
+    // Forward to window.wasm_o function if defined (legacy compatibility).
     if (typeof window.wasm_o === 'function') {
         window.wasm_o(op, d0, d1, d2);
     }
