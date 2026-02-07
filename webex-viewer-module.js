@@ -29,8 +29,10 @@ window.Module = {
     postRun: [],
     locateFile: function (path, prefix) {
         const basedir = window.g_webex_basedir;
-        if (path.endsWith('.wasm')) { return basedir + path; }
-        if (path.endsWith('.data')) { return basedir + path; }
+        // Strip version number from filename (e.g., webex-viewer-121250.wasm -> webex-viewer.wasm).
+        const stripped = path.replace(/webex-viewer-\d+\./, 'webex-viewer.');
+        if (path.endsWith('.wasm')) { return basedir + stripped; }
+        if (path.endsWith('.data')) { return basedir + stripped; }
         return prefix + path;
     },
     json: {
