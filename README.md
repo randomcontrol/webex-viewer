@@ -28,13 +28,13 @@ Viewer SDK subscription; keys are locked to your domain), a canvas with the id
 <script> window.WEBEX_API_KEY = 'ak_xxxxxxxxxxxxxxxx'; </script>
 
 <!-- 1. Module config. -->
-<script src="https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.5.10/webex-viewer-module.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.6.0/webex-viewer-module.js"></script>
 
 <!-- 2. Your app logic. -->
 <script src="js/app.js"></script>
 
 <!-- 3. Boot the WASM. -->
-<script src="https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.5.10/webex-viewer.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/randomcontrol/webex-viewer@v1.6.0/webex-viewer.js"></script>
 ```
 
 Pin both scripts to the same release tag: the module and the loader travel as a pair. The
