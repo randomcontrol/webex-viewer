@@ -265,6 +265,7 @@ export declare class WebexViewer {
   off(type: string, listener: (event: WebexRawEvent) => void): this;
   once<Event extends keyof WebexEventMap>(type: Event, listener: (event: WebexEventMap[Event]) => void): this;
   once(type: string, listener: (event: WebexRawEvent) => void): this;
+  /** Stops the engine main loop, rejects pending operations, and releases owned DOM state. Idempotent. */
   destroy(): void;
 }
 

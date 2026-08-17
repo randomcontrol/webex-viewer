@@ -1,7 +1,7 @@
 {
   "name": "@randomcontrol/webex-viewer",
-  "version": "1.6.15",
-  "description": "Maverick WebEx viewer and editor browser SDK",
+  "version": "2.0.0",
+  "description": "Maverick WebEx viewer browser SDK",
   "type": "module",
   "main": "./webex-viewer.mjs",
   "module": "./webex-viewer.mjs",
