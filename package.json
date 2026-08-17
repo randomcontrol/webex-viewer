@@ -1,0 +1,26 @@
+{
+  "name": "@randomcontrol/webex-sdk",
+  "version": "1.6.13",
+  "description": "Maverick WebEx viewer and editor browser SDK",
+  "type": "module",
+  "main": "./webex-viewer.js",
+  "module": "./webex-viewer.mjs",
+  "types": "./webex-viewer.d.ts",
+  "exports": {
+    ".": {
+      "types": "./webex-viewer.d.ts",
+      "import": "./webex-viewer.mjs",
+      "default": "./webex-viewer.js"
+    }
+  },
+  "files": [
+    "webex-viewer.js",
+    "webex-viewer.mjs",
+    "webex-viewer.d.ts",
+    "webex-viewer-engine.js",
+    "webex-viewer-engine.wasm",
+    "webex-viewer-engine.data"
+  ],
+  "sideEffects": false,
+  "license": "SEE LICENSE IN LICENSE"
+}
