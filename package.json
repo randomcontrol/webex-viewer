@@ -1,15 +1,18 @@
 {
-  "name": "@randomcontrol/webex-sdk",
-  "version": "1.6.13",
+  "name": "@randomcontrol/webex-viewer",
+  "version": "1.6.14",
   "description": "Maverick WebEx viewer and editor browser SDK",
   "type": "module",
-  "main": "./webex-viewer.js",
+  "main": "./webex-viewer.mjs",
   "module": "./webex-viewer.mjs",
   "types": "./webex-viewer.d.ts",
   "exports": {
     ".": {
       "types": "./webex-viewer.d.ts",
       "import": "./webex-viewer.mjs",
+      "default": "./webex-viewer.mjs"
+    },
+    "./classic": {
       "default": "./webex-viewer.js"
     }
   },
@@ -22,5 +25,24 @@
     "webex-viewer-engine.data"
   ],
   "sideEffects": false,
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randomcontrol/webex-viewer.git"
+  },
+  "homepage": "https://github.com/randomcontrol/webex-viewer#readme",
+  "bugs": "https://github.com/randomcontrol/webex-viewer/issues",
+  "keywords": [
+    "maverick",
+    "webex",
+    "webgl",
+    "webgpu",
+    "3d-viewer"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
